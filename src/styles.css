@@ -85,10 +85,14 @@
   --brand-deep: oklch(0.33 0.09 254);
   --brand-light: oklch(0.62 0.11 240);
   --brand-mist: oklch(0.95 0.02 245);
-  --brand-mist: oklch(0.95 0.02 245);
   --brand-foreground: oklch(0.99 0.003 250);
   --mint: oklch(0.72 0.13 178);
   --mint-soft: oklch(0.95 0.04 178);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.22 0.03 258);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.22 0.03 258);
+
 
   --primary: oklch(0.42 0.11 253);
   --primary-foreground: oklch(0.99 0.003 250);
