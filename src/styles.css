@@ -22,12 +22,17 @@
   --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Sora", ui-sans-serif, system-ui, sans-serif;
   --shadow-soft: 0 1px 2px oklch(0.36 0.09 250 / 0.06), 0 12px 30px oklch(0.36 0.09 250 / 0.07);
+  --shadow-lift: 0 2px 4px oklch(0.36 0.09 250 / 0.05), 0 24px 60px -18px oklch(0.36 0.09 250 / 0.22);
+  --shadow-glow: 0 18px 45px -14px oklch(0.42 0.11 253 / 0.45);
   --color-brand: var(--brand);
   --color-brand-deep: var(--brand-deep);
   --color-brand-light: var(--brand-light);
   --color-brand-mist: var(--brand-mist);
   --color-brand-foreground: var(--brand-foreground);
+  --color-mint: var(--mint);
+  --color-mint-soft: var(--mint-soft);
   --color-surface: var(--surface);
+
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -81,10 +86,14 @@
   --brand-light: oklch(0.62 0.11 240);
   --brand-mist: oklch(0.95 0.02 245);
   --brand-foreground: oklch(0.99 0.003 250);
+  --mint: oklch(0.72 0.13 178);
+  --mint-soft: oklch(0.95 0.04 178);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.22 0.03 258);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.22 0.03 258);
+
+
   --primary: oklch(0.42 0.11 253);
   --primary-foreground: oklch(0.99 0.003 250);
   --secondary: oklch(0.95 0.02 245);
@@ -157,5 +166,86 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+  }
+}
+
+@utility bg-grid {
+  background-image:
+    linear-gradient(to right, color-mix(in oklab, var(--brand) 8%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in oklab, var(--brand) 8%, transparent) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+@utility bg-dots {
+  background-image: radial-gradient(color-mix(in oklab, var(--brand) 14%, transparent) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+@utility text-gradient-brand {
+  background-image: linear-gradient(100deg, var(--brand-deep), var(--brand-light) 55%, var(--mint));
+  background-clip: text;
+  color: transparent;
+}
+
+@utility bg-brand-gradient {
+  background-image: linear-gradient(135deg, var(--brand-deep), var(--brand) 45%, var(--brand-light));
+}
+
+@utility glass-card {
+  background-color: color-mix(in oklab, var(--card) 72%, transparent);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+@utility blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(72px);
+  pointer-events: none;
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: 0.55; }
+  70% { transform: scale(1.55); opacity: 0; }
+  100% { transform: scale(1.55); opacity: 0; }
+}
+
+@utility animate-float-slow {
+  animation: float-slow 7s ease-in-out infinite;
+}
+
+@utility animate-pulse-ring {
+  animation: pulse-ring 2.6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  ::selection {
+    background-color: color-mix(in oklab, var(--brand-light) 30%, transparent);
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .animate-float-slow, .animate-pulse-ring { animation: none; }
   }
 }
