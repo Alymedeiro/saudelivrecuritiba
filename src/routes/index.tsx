@@ -122,6 +122,12 @@ const pilaresConfianca = [
   { label: "Excelência em imunização", icon: Syringe },
 ];
 
+const numerosDaRede = [
+  { value: "+10", label: "anos de história" },
+  { value: "+100", label: "unidades no Brasil" },
+  { value: "+10 mil", label: "famílias protegidas" },
+];
+
 const perfis = [
   {
     title: "Vacinação infantil",
@@ -393,7 +399,41 @@ function Index() {
         </Reveal>
       </Section>
 
-      {/* 6. FASES DA VIDA */}
+      {/* 6. SOBRE A REDE */}
+      <section className="relative overflow-hidden bg-brand-deep px-5 py-16 text-brand-foreground sm:px-8 md:py-20">
+        <span aria-hidden="true" className="bg-dots absolute inset-0 opacity-[0.12]" />
+        <div className="relative mx-auto grid w-full max-w-6xl gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:gap-16">
+          <Reveal>
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-mint">
+              Sobre a Saúde Livre
+            </p>
+            <h2 className="font-display mt-4 text-3xl font-bold leading-tight sm:text-4xl">
+              A confiança de uma rede que cresce cuidando de pessoas.
+            </h2>
+            <p className="mt-5 max-w-xl text-base leading-relaxed text-brand-mist">
+              A unidade Curitiba faz parte da rede Saúde Livre, que leva vacinação, orientação e
+              cuidado humanizado a famílias em diferentes regiões do Brasil.
+            </p>
+          </Reveal>
+
+          <div className="grid gap-8 sm:grid-cols-3 sm:gap-0">
+            {numerosDaRede.map((numero, i) => (
+              <Reveal key={numero.label} delay={i * 90}>
+                <div className="border-brand-light/30 text-center sm:border-l sm:px-6 first:sm:border-l-0">
+                  <strong className="font-display block whitespace-nowrap text-5xl font-bold leading-none text-brand-foreground lg:text-[3.25rem] xl:text-6xl">
+                    {numero.value}
+                  </strong>
+                  <span className="mt-3 block text-xs font-semibold uppercase tracking-[0.12em] text-brand-mist sm:text-sm">
+                    {numero.label}
+                  </span>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 7. FASES DA VIDA */}
       <Section id="fases" decorated>
         <Reveal className="max-w-2xl">
           <Eyebrow>Fases da vida</Eyebrow>
