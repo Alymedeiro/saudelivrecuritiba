@@ -219,27 +219,18 @@ const comoFunciona = [
 
 function Index() {
   return (
-    <main className="font-sans">
+    <main className="bg-background font-sans">
       <SiteHeader />
 
       {/* 1. HERO */}
       <header
         id="topo"
-        className="relative overflow-hidden bg-surface px-5 pb-20 pt-28 sm:px-8 md:pb-28 md:pt-36"
+        className="relative overflow-hidden bg-background px-5 pb-16 pt-28 sm:px-8 md:pb-20 md:pt-36"
       >
-        <span aria-hidden="true" className="bg-grid absolute inset-0 opacity-60" />
-        <span
-          aria-hidden="true"
-          className="blob -left-32 -top-24 h-[26rem] w-[26rem] bg-brand-light/25"
-        />
-        <span
-          aria-hidden="true"
-          className="blob -right-24 top-40 h-[22rem] w-[22rem] bg-mint/25"
-        />
         <div className="relative mx-auto grid w-full max-w-6xl items-center gap-14 md:grid-cols-[1.05fr_1fr] md:gap-16">
           <Reveal>
             <Eyebrow>{clinic.name}</Eyebrow>
-            <h1 className="font-display text-[2.15rem] font-bold leading-[1.08] tracking-tight text-brand-deep sm:text-[3.4rem]">
+            <h1 className="font-display text-[2.15rem] font-bold leading-[1.08] text-brand-deep sm:text-[3.4rem]">
               Proteção para quem você ama{" "}
               <span className="text-gradient-brand">começa com a prevenção certa.</span>
             </h1>
@@ -254,7 +245,7 @@ function Index() {
               {heroChips.map((chip) => (
                 <li
                   key={chip.label}
-                  className="inline-flex items-center gap-2 rounded-full border border-brand/12 bg-card/80 px-4 py-2 text-sm font-medium text-brand shadow-soft"
+                  className="inline-flex items-center gap-2 rounded-lg bg-brand-mist px-4 py-2 text-sm font-medium text-brand"
                 >
                   <chip.icon className="h-4 w-4 text-mint" aria-hidden="true" />
                   {chip.label}
@@ -265,11 +256,7 @@ function Index() {
 
           <Reveal delay={120} className="relative">
             <div className="relative">
-              <span
-                aria-hidden="true"
-                className="bg-brand-gradient absolute -inset-3 rounded-[2.5rem] opacity-15 blur-2xl"
-              />
-              <div className="relative overflow-hidden rounded-[2rem] border border-white/40 shadow-lift">
+              <div className="relative overflow-hidden rounded-xl border border-border">
                 <img
                   src={heroImg}
                   width={1408}
@@ -277,13 +264,9 @@ function Index() {
                   alt="Enfermeira acolhendo mãe e filha durante atendimento de vacinação"
                   className="h-full w-full object-cover"
                 />
-                <span
-                  aria-hidden="true"
-                  className="absolute inset-0 bg-gradient-to-t from-brand-deep/35 via-transparent to-transparent"
-                />
               </div>
-              <div className="glass-card animate-float-slow absolute -bottom-6 left-4 flex items-center gap-3 rounded-2xl border border-border p-4 shadow-lift sm:left-8">
-                <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-mint-soft text-brand">
+              <div className="absolute -bottom-5 left-4 flex items-center gap-3 rounded-xl border border-border bg-background p-4 shadow-soft sm:left-8">
+                <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-mint-soft text-brand">
                   <ShieldCheck className="h-5 w-5" aria-hidden="true" />
                 </span>
                 <p className="text-sm font-semibold leading-tight text-brand-deep">
@@ -341,11 +324,7 @@ function Index() {
       <Section>
         <div className="grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:gap-16">
           <Reveal className="relative">
-            <span
-              aria-hidden="true"
-              className="absolute -inset-4 rounded-[2rem] bg-mint-soft"
-            />
-            <div className="relative overflow-hidden rounded-[1.75rem] shadow-lift">
+            <div className="relative overflow-hidden rounded-xl border border-border">
               <img
                   src={bebeSaudeLivreAsset.url}
                 loading="lazy"
@@ -353,10 +332,6 @@ function Index() {
                   height={425}
                   alt="Bebê sorrindo durante os primeiros meses de vida"
                 className="aspect-[4/3] w-full object-cover"
-              />
-              <span
-                aria-hidden="true"
-                className="absolute inset-0 bg-gradient-to-t from-brand-deep/20 to-transparent"
               />
             </div>
           </Reveal>
@@ -380,7 +355,7 @@ function Index() {
         </div>
 
         <Reveal delay={160} className="relative mt-10 lg:-mt-2 lg:ml-[7%] lg:w-[86%]">
-          <div className="bg-brand-gradient grid overflow-hidden rounded-[1.75rem] shadow-glow sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid overflow-hidden rounded-xl border border-border bg-surface sm:grid-cols-2 lg:grid-cols-4">
             {[
               { title: "Vacinas atualizadas", text: "Orientação conforme idade e histórico", icon: ShieldCheck },
               { title: "Planejamento vacinal", text: "Organização de doses e intervalos", icon: ClipboardList },
@@ -389,11 +364,11 @@ function Index() {
             ].map((benefit) => (
               <div
                 key={benefit.title}
-                className="flex min-h-44 flex-col items-center justify-center border-brand-light/35 p-6 text-center text-brand-foreground sm:border-l sm:first:border-l-0 lg:min-h-48"
+                className="flex min-h-40 flex-col items-center justify-center border-border p-6 text-center text-foreground sm:border-l sm:first:border-l-0"
               >
-                <benefit.icon className="h-9 w-9 text-mint" aria-hidden="true" />
-                <h3 className="font-display mt-4 text-base font-semibold">{benefit.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-brand-mist/85">{benefit.text}</p>
+                <benefit.icon className="h-8 w-8 text-brand" aria-hidden="true" />
+                <h3 className="font-display mt-4 text-base font-semibold text-brand-deep">{benefit.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{benefit.text}</p>
               </div>
             ))}
           </div>
@@ -411,9 +386,7 @@ function Index() {
 
       {/* 4. PREVENÇÃO */}
       <Section tone="soft">
-        <div className="relative overflow-hidden rounded-[2rem] border border-border bg-card px-6 py-10 shadow-lift sm:px-10 lg:px-14 lg:py-14">
-          <span aria-hidden="true" className="bg-dots absolute inset-0 opacity-50" />
-          <span aria-hidden="true" className="blob -right-20 top-8 h-72 w-72 bg-mint/20" />
+        <div className="relative overflow-hidden px-0 py-2">
           <div className="relative grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
             <Reveal>
               <Eyebrow>Prevenção em dia</Eyebrow>
@@ -421,7 +394,7 @@ function Index() {
                 Muitas pessoas só lembram da vacina{" "}
                 <span className="text-gradient-brand">quando a doença aparece.</span>
               </h2>
-              <div className="mt-6 h-1.5 w-20 rounded-full bg-brand-gradient" aria-hidden="true" />
+              <div className="mt-6 h-px w-16 bg-brand-light" aria-hidden="true" />
               <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
                 A rotina corre e a prevenção acaba ficando para depois. Mas doenças como gripe,
                 meningite, pneumonia, HPV, dengue e herpes-zóster continuam circulando e podem
@@ -443,7 +416,7 @@ function Index() {
             <Reveal delay={120} className="relative flex min-h-80 items-end justify-center lg:min-h-[25rem]">
               <span
                 aria-hidden="true"
-                className="absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full border-[2.5rem] border-brand-light/15 sm:h-80 sm:w-80"
+                className="absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-mist sm:h-80 sm:w-80"
               />
               <img
                 src={mascotImg}
@@ -451,9 +424,9 @@ function Index() {
                 width={768}
                 height={960}
                 alt="Mascote da Saúde Livre incentivando a prevenção por meio da vacinação"
-                className="animate-mascot-float relative z-10 h-auto w-56 drop-shadow-xl sm:w-64 lg:w-72"
+                className="relative z-10 h-auto w-56 drop-shadow-md sm:w-64 lg:w-72"
               />
-              <div className="absolute bottom-2 left-1/2 z-20 flex w-[min(100%,22rem)] -translate-x-1/2 items-center gap-3 rounded-2xl bg-brand-deep px-5 py-3 text-brand-foreground shadow-glow">
+              <div className="absolute bottom-2 left-1/2 z-20 flex w-[min(100%,22rem)] -translate-x-1/2 items-center gap-3 rounded-xl bg-brand-deep px-5 py-3 text-brand-foreground">
                 <ShieldCheck className="h-7 w-7 shrink-0 text-mint" aria-hidden="true" />
                 <p className="text-sm font-semibold leading-snug">
                   Prevenir sempre será mais leve do que remediar.
@@ -476,7 +449,7 @@ function Index() {
             </h2>
           </Reveal>
           <Reveal delay={100}>
-            <div className="rounded-3xl border border-border bg-card p-8 shadow-soft">
+            <div className="border-l-2 border-brand-light bg-card py-2 pl-7">
               <p className="text-base leading-relaxed text-muted-foreground">
                 Vacinação não é uma lista igual para todo mundo. Idade, histórico, doses já tomadas
                 e necessidades individuais mudam o que faz sentido para cada pessoa. Por isso, o
@@ -511,7 +484,6 @@ function Index() {
 
       {/* 6. SOBRE A REDE */}
       <section className="relative overflow-hidden bg-brand-deep px-5 py-16 text-brand-foreground sm:px-8 md:py-20">
-        <span aria-hidden="true" className="bg-dots absolute inset-0 opacity-[0.12]" />
         <div className="relative mx-auto grid w-full max-w-6xl gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:gap-16">
           <Reveal>
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-mint">
@@ -560,7 +532,7 @@ function Index() {
             </Reveal>
           ))}
           <Reveal delay={350} className="sm:col-span-2 lg:col-span-1">
-            <div className="relative h-full overflow-hidden rounded-3xl shadow-lift">
+            <div className="relative h-full overflow-hidden rounded-xl border border-border">
               <img
                 src={idososImg}
                 loading="lazy"
@@ -568,10 +540,6 @@ function Index() {
                 height={912}
                 alt="Casal de idosos aguardando atendimento em clínica de vacinação"
                 className="h-full min-h-56 w-full object-cover"
-              />
-              <span
-                aria-hidden="true"
-                className="absolute inset-0 bg-gradient-to-t from-brand-deep/45 to-transparent"
               />
             </div>
           </Reveal>
@@ -652,21 +620,21 @@ function Index() {
           </Reveal>
 
           <Reveal delay={120}>
-            <div className="rounded-3xl bg-brand-deep p-4 shadow-lift sm:p-5">
+            <div className="rounded-xl border border-border bg-card p-3 sm:p-4">
               <div className="space-y-3">
                 {seguranca.map((item) => (
                   <div
                     key={item.title}
-                    className="flex gap-4 rounded-2xl border border-brand-light/35 bg-brand-deep p-4 sm:items-center sm:p-5"
+                    className="flex gap-4 border-b border-border p-4 last:border-b-0 sm:items-center sm:p-5"
                   >
-                    <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-mint text-brand-deep">
+                    <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-brand-mist text-brand">
                       <item.icon className="h-6 w-6" aria-hidden="true" />
                     </span>
                     <div>
-                      <h3 className="font-display text-base font-semibold text-brand-foreground sm:text-lg">
+                      <h3 className="font-display text-base font-semibold text-brand-deep sm:text-lg">
                         {item.title}
                       </h3>
-                      <p className="mt-1 text-sm leading-relaxed text-brand-mist/80">{item.text}</p>
+                      <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{item.text}</p>
                     </div>
                   </div>
                 ))}
@@ -722,7 +690,7 @@ function Index() {
           <div className="mt-10 space-y-3">
             {faq.map((item, i) => (
               <Reveal key={item.q} delay={i * 50}>
-                <details className="group rounded-2xl border border-border bg-card px-6 py-5 shadow-soft transition-colors duration-300 open:border-brand/25 hover:border-brand/25">
+                <details className="group rounded-xl border border-border bg-card px-6 py-5 transition-colors duration-200 open:border-brand/25 hover:border-brand/25">
                   <summary className="flex cursor-pointer list-none items-center justify-between gap-6 text-base font-semibold text-brand-deep">
                     <h3 className="font-display text-base font-semibold">{item.q}</h3>
                     <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-mist text-lg leading-none text-brand transition-transform duration-300 group-open:rotate-45">
@@ -786,9 +754,9 @@ function Index() {
                 href={item.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex h-full flex-col items-center rounded-3xl border border-border bg-card p-6 text-center shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-brand/25 hover:shadow-lift"
+                className="group flex h-full flex-col items-center rounded-xl border border-border bg-card p-6 text-center transition-colors duration-200 hover:border-brand/25"
               >
-                <span className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-light/15 text-brand transition-colors group-hover:bg-brand group-hover:text-brand-foreground">
+                <span className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-brand-mist text-brand transition-colors group-hover:bg-brand group-hover:text-brand-foreground">
                   <item.icon className="h-7 w-7" aria-hidden="true" />
                 </span>
                 <h3 className="font-display mt-5 text-lg font-semibold text-brand-deep">{item.title}</h3>
@@ -805,11 +773,9 @@ function Index() {
 
       {/* 14. RODAPÉ */}
       <footer className="relative overflow-hidden bg-brand-deep px-5 py-16 text-brand-mist sm:px-8">
-        <span aria-hidden="true" className="bg-dots absolute inset-0 opacity-[0.15]" />
-        <span aria-hidden="true" className="blob -left-20 -top-16 h-72 w-72 bg-brand-light/25" />
         <div className="relative mx-auto grid w-full max-w-6xl gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <span className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-white/10 text-brand-foreground">
+            <span className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-lg bg-white/10 text-brand-foreground">
               <ShieldCheck className="h-6 w-6" aria-hidden="true" />
             </span>
             <p className="font-display text-lg font-bold text-brand-foreground">
