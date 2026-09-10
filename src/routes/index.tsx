@@ -20,6 +20,7 @@ import {
 import heroImg from "@/assets/hero-familia.jpg";
 import idososImg from "@/assets/fases-idosos.jpg";
 import cuidadoPrimeirosMesesImg from "@/assets/cuidado-primeiros-meses.jpg";
+import mascotImg from "@/assets/mascote-saude-livre.png";
 import { clinic, whatsappLink } from "@/lib/clinic";
 import { Card, Eyebrow, Section, WhatsAppButton } from "@/components/landing/ui";
 import { WhatsAppFloat } from "@/components/landing/WhatsAppFloat";
@@ -411,20 +412,57 @@ function Index() {
 
       {/* 4. PREVENÇÃO */}
       <Section tone="soft">
-        <Reveal className="mx-auto max-w-3xl text-center">
-          <span className="mx-auto mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-mist text-brand">
-            <Clock className="h-7 w-7" aria-hidden="true" />
-          </span>
-          <h2 className="font-display text-3xl font-bold leading-tight text-brand-deep sm:text-4xl">
-            Muita gente só lembra da vacina quando a doença aparece.
-          </h2>
-          <p className="mt-6 text-base leading-relaxed text-muted-foreground sm:text-lg">
-            A prevenção raramente é urgente — e é exatamente por isso que ela costuma ficar para
-            depois. Ela não pede pressa, pede atenção. É uma decisão tomada em um dia comum, com
-            calma, antes que qualquer coisa aconteça. E é esse cuidado silencioso que protege as
-            pessoas que você ama.
-          </p>
-        </Reveal>
+        <div className="relative overflow-hidden rounded-[2rem] border border-border bg-card px-6 py-10 shadow-lift sm:px-10 lg:px-14 lg:py-14">
+          <span aria-hidden="true" className="bg-dots absolute inset-0 opacity-50" />
+          <span aria-hidden="true" className="blob -right-20 top-8 h-72 w-72 bg-mint/20" />
+          <div className="relative grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+            <Reveal>
+              <Eyebrow>Prevenção em dia</Eyebrow>
+              <h2 className="font-display max-w-xl text-3xl font-bold leading-tight text-brand-deep sm:text-4xl">
+                Muitas pessoas só lembram da vacina{" "}
+                <span className="text-gradient-brand">quando a doença aparece.</span>
+              </h2>
+              <div className="mt-6 h-1.5 w-20 rounded-full bg-brand-gradient" aria-hidden="true" />
+              <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+                A rotina corre e a prevenção acaba ficando para depois. Mas doenças como gripe,
+                meningite, pneumonia, HPV, dengue e herpes-zóster continuam circulando e podem
+                atingir crianças, adultos e idosos.
+              </p>
+              <p className="mt-4 font-display text-lg font-bold text-brand-deep">
+                Quando a proteção atrasa, o risco aumenta.
+              </p>
+              <div className="mt-8">
+                <WhatsAppButton
+                  size="lg"
+                  message="Olá! Quero consultar as vacinas disponíveis na Saúde Livre Curitiba."
+                >
+                  Consultar vacinas disponíveis
+                </WhatsAppButton>
+              </div>
+            </Reveal>
+
+            <Reveal delay={120} className="relative flex min-h-80 items-end justify-center lg:min-h-[25rem]">
+              <span
+                aria-hidden="true"
+                className="absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full border-[2.5rem] border-brand-light/15 sm:h-80 sm:w-80"
+              />
+              <img
+                src={mascotImg}
+                loading="lazy"
+                width={768}
+                height={960}
+                alt="Mascote da Saúde Livre incentivando a prevenção por meio da vacinação"
+                className="animate-mascot-float relative z-10 h-auto w-56 drop-shadow-xl sm:w-64 lg:w-72"
+              />
+              <div className="absolute bottom-2 left-1/2 z-20 flex w-[min(100%,22rem)] -translate-x-1/2 items-center gap-3 rounded-2xl bg-brand-deep px-5 py-3 text-brand-foreground shadow-glow">
+                <ShieldCheck className="h-7 w-7 shrink-0 text-mint" aria-hidden="true" />
+                <p className="text-sm font-semibold leading-snug">
+                  Prevenir sempre será mais leve do que remediar.
+                </p>
+              </div>
+            </Reveal>
+          </div>
+        </div>
       </Section>
 
       {/* 4. QUEBRA DE OBJEÇÃO */}
