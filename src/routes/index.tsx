@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 import heroImg from "@/assets/hero-familia.jpg";
 import idososImg from "@/assets/fases-idosos.jpg";
+import cuidadoPrimeirosMesesImg from "@/assets/cuidado-primeiros-meses.jpg";
 import { clinic, whatsappLink } from "@/lib/clinic";
 import { Card, Eyebrow, Section, WhatsAppButton } from "@/components/landing/ui";
 import { WhatsAppFloat } from "@/components/landing/WhatsAppFloat";
@@ -336,7 +337,79 @@ function Index() {
         </Reveal>
       </Section>
 
-      {/* 3. PREVENÇÃO */}
+      {/* 3. PROTEÇÃO NOS PRIMEIROS MESES */}
+      <Section>
+        <div className="grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:gap-16">
+          <Reveal className="relative">
+            <span
+              aria-hidden="true"
+              className="absolute -inset-4 rounded-[2rem] bg-mint-soft"
+            />
+            <div className="relative overflow-hidden rounded-[1.75rem] shadow-lift">
+              <img
+                src={cuidadoPrimeirosMesesImg}
+                loading="lazy"
+                width={1200}
+                height={900}
+                alt="Profissional de saúde acolhendo um bebê em ambiente preparado para atendimento infantil"
+                className="aspect-[4/3] w-full object-cover"
+              />
+              <span
+                aria-hidden="true"
+                className="absolute inset-0 bg-gradient-to-t from-brand-deep/20 to-transparent"
+              />
+            </div>
+          </Reveal>
+
+          <Reveal delay={100}>
+            <Eyebrow>Proteção desde o começo</Eyebrow>
+            <h2 className="font-display text-3xl font-bold leading-tight text-brand-deep sm:text-4xl">
+              Seu bebê pode precisar de uma{" "}
+              <span className="text-gradient-brand">proteção mais completa</span> do que você imagina.
+            </h2>
+            <p className="mt-5 text-base leading-relaxed text-muted-foreground">
+              Os primeiros meses exigem atenção especial ao calendário vacinal. Algumas doenças
+              respiratórias, meningites, pneumonias e outras infecções podem ser prevenidas com a
+              orientação e as vacinas indicadas para cada etapa.
+            </p>
+            <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+              Revisamos a caderneta e ajudamos sua família a entender as doses e os intervalos
+              recomendados para o bebê, sempre de forma individualizada.
+            </p>
+          </Reveal>
+        </div>
+
+        <Reveal delay={160} className="relative mt-10 lg:-mt-2 lg:ml-[7%] lg:w-[86%]">
+          <div className="bg-brand-gradient grid overflow-hidden rounded-[1.75rem] shadow-glow sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { title: "Vacinas atualizadas", text: "Orientação conforme idade e histórico", icon: ShieldCheck },
+              { title: "Planejamento vacinal", text: "Organização de doses e intervalos", icon: ClipboardList },
+              { title: "Acompanhamento", text: "Atenção especializada em cada etapa", icon: HeartHandshake },
+              { title: "Atendimento infantil", text: "Cuidado acolhedor e humanizado", icon: Baby },
+            ].map((benefit) => (
+              <div
+                key={benefit.title}
+                className="flex min-h-44 flex-col items-center justify-center border-brand-light/35 p-6 text-center text-brand-foreground sm:border-l sm:first:border-l-0 lg:min-h-48"
+              >
+                <benefit.icon className="h-9 w-9 text-mint" aria-hidden="true" />
+                <h3 className="font-display mt-4 text-base font-semibold">{benefit.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-brand-mist/85">{benefit.text}</p>
+              </div>
+            ))}
+          </div>
+        </Reveal>
+
+        <Reveal className="mt-8 flex justify-center">
+          <WhatsAppButton
+            size="lg"
+            message="Olá! Quero entender quais vacinas são indicadas para o meu bebê."
+          >
+            Quero orientação para meu bebê
+          </WhatsAppButton>
+        </Reveal>
+      </Section>
+
+      {/* 4. PREVENÇÃO */}
       <Section tone="soft">
         <Reveal className="mx-auto max-w-3xl text-center">
           <span className="mx-auto mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-mist text-brand">
