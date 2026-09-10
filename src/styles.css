@@ -215,12 +215,21 @@
   100% { transform: scale(1.55); opacity: 0; }
 }
 
+@keyframes mascot-float {
+  0%, 100% { transform: translateY(0) rotate(-1deg); }
+  50% { transform: translateY(-8px) rotate(1deg); }
+}
+
 @utility animate-float-slow {
   animation: float-slow 7s ease-in-out infinite;
 }
 
 @utility animate-pulse-ring {
   animation: pulse-ring 2.6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@utility animate-mascot-float {
+  animation: mascot-float 4.5s ease-in-out infinite;
 }
 
 @layer base {
@@ -250,6 +259,6 @@
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     .reveal { opacity: 1; transform: none; transition: none; }
-    .animate-float-slow, .animate-pulse-ring { animation: none; }
+    .animate-float-slow, .animate-pulse-ring, .animate-mascot-float { animation: none; }
   }
 }

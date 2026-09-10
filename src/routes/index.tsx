@@ -24,6 +24,7 @@ import { Card, Eyebrow, Section, WhatsAppButton } from "@/components/landing/ui"
 import { WhatsAppFloat } from "@/components/landing/WhatsAppFloat";
 import { SiteHeader } from "@/components/landing/SiteHeader";
 import { Reveal } from "@/components/landing/Reveal";
+import { MascotFloat } from "@/components/landing/MascotFloat";
 
 const TITLE = "Saúde Livre Vacinas Curitiba | Vacinação para Toda a Família";
 const DESCRIPTION =
@@ -610,6 +611,7 @@ function Index() {
       </footer>
 
       <WhatsAppFloat />
+      <MascotFloat />
     </main>
   );
 }
