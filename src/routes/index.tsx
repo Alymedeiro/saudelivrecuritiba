@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 import heroImg from "@/assets/hero-familia.jpg";
 import idososImg from "@/assets/fases-idosos.jpg";
+import cuidadoPrimeirosMesesImg from "@/assets/cuidado-primeiros-meses.jpg";
 import { clinic, whatsappLink } from "@/lib/clinic";
 import { Card, Eyebrow, Section, WhatsAppButton } from "@/components/landing/ui";
 import { WhatsAppFloat } from "@/components/landing/WhatsAppFloat";
@@ -336,7 +337,34 @@ function Index() {
         </Reveal>
       </Section>
 
-      {/* 3. PREVENÇÃO */}
+      {/* 3. PROTEÇÃO NOS PRIMEIROS MESES */}
+      <Section>
+        <div className="grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:gap-16">
+          <Reveal className="relative">
+            <span
+              aria-hidden="true"
+              className="absolute -inset-4 rounded-[2rem] bg-mint-soft"
+            />
+            <div className="relative overflow-hidden rounded-[1.75rem] shadow-lift">
+              <img
+                src={cuidadoPrimeirosMesesImg}
+                loading="lazy"
+                width={1200}
+                height={900}
+                alt="Profissional de saúde acolhendo um bebê em ambiente preparado para atendimento infantil"
+                className="aspect-[4/3] w-full object-cover"
+              />
+              <span
+                aria-hidden="true"
+                className="absolute inset-0 bg-gradient-to-t from-brand-deep/20 to-transparent"
+              />
+            </div>
+          </Reveal>
+
+          <Reveal delay={100}>
+            <Eyebrow>Proteção desde o começo</Eyebrow>
+            <h2 className="font-display text-3xl font-bold leading-tight text-brand-deep sm:text-4xl">
+              Seu bebê pode precisar de uma{
       <Section tone="soft">
         <Reveal className="mx-auto max-w-3xl text-center">
           <span className="mx-auto mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-mist text-brand">
