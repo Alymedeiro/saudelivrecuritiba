@@ -386,7 +386,7 @@ function Index() {
               { title: "Planejamento vacinal", text: "Organização de doses e intervalos", icon: ClipboardList },
               { title: "Acompanhamento", text: "Atenção especializada em cada etapa", icon: HeartHandshake },
               { title: "Atendimento infantil", text: "Cuidado acolhedor e humanizado", icon: Baby },
-            ].map((benefit, index) => (
+            ].map((benefit) => (
               <div
                 key={benefit.title}
                 className="flex min-h-44 flex-col items-center justify-center border-brand-light/35 p-6 text-center text-brand-foreground sm:border-l sm:first:border-l-0 lg:min-h-48"
