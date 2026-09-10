@@ -3,7 +3,6 @@ import {
   Baby,
   CalendarCheck,
   ClipboardList,
-  Clock,
   HeartHandshake,
   Instagram,
   MapPin,
