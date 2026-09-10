@@ -253,3 +253,7 @@
     .animate-float-slow, .animate-pulse-ring, .animate-mascot-float { animation: none; }
   }
 }
+
+#lovable-badge {
+  display: none !important;
+}
