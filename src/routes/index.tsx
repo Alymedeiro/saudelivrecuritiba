@@ -420,7 +420,7 @@ function Index() {
             {numerosDaRede.map((numero, i) => (
               <Reveal key={numero.label} delay={i * 90}>
                 <div className="border-brand-light/30 text-center sm:border-l sm:px-6 first:sm:border-l-0">
-                  <strong className="font-display block text-5xl font-bold leading-none text-brand-foreground md:text-6xl">
+                  <strong className="font-display block whitespace-nowrap text-5xl font-bold leading-none text-brand-foreground lg:text-[3.25rem] xl:text-6xl">
                     {numero.value}
                   </strong>
                   <span className="mt-3 block text-xs font-semibold uppercase tracking-[0.12em] text-brand-mist sm:text-sm">
