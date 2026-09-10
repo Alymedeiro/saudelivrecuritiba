@@ -89,30 +89,37 @@ const fases = [
 
 const seguranca = [
   {
-    title: "Equipe qualificada",
-    text: "Aplicação realizada por profissionais de saúde habilitados.",
-    icon: Stethoscope,
+    title: "Imunizantes regularizados pela Anvisa",
+    text: "Trabalhamos com vacinas registradas no órgão regulador e conferidas antes da aplicação.",
+    icon: ShieldCheck,
   },
   {
-    title: "Estrutura preparada",
-    text: "Ambiente organizado e higienizado para o atendimento.",
+    title: "Estrutura moderna e preparada",
+    text: "Ambiente organizado, higienizado e pensado para um atendimento confortável.",
     icon: Shield,
   },
   {
-    title: "Armazenamento adequado",
-    text: "Imunizantes conservados sob controle de temperatura.",
+    title: "Equipe qualificada",
+    text: "Aplicação realizada por profissionais de saúde habilitados e preparados para orientar.",
+    icon: Stethoscope,
+  },
+  {
+    title: "Controle de temperatura",
+    text: "Armazenamento adequado para preservar a qualidade dos imunizantes.",
     icon: Thermometer,
   },
   {
-    title: "Segurança dos imunizantes",
-    text: "Conferência de lote, validade e indicação antes de cada dose.",
+    title: "Controle e rastreabilidade",
+    text: "Conferência de lote, validade, indicação e registro antes de cada dose.",
     icon: Package,
   },
-  {
-    title: "Atendimento humanizado",
-    text: "Tempo para explicar, acolher e responder às suas dúvidas.",
-    icon: HeartHandshake,
-  },
+];
+
+const pilaresConfianca = [
+  { label: "Experiência", icon: ShieldCheck },
+  { label: "Tecnologia", icon: Sparkles },
+  { label: "Acolhimento", icon: HeartHandshake },
+  { label: "Excelência em imunização", icon: Syringe },
 ];
 
 const perfis = [
@@ -464,20 +471,58 @@ function Index() {
 
       {/* 9. SEGURANÇA */}
       <Section id="seguranca" tone="soft">
-        <Reveal className="max-w-2xl">
-          <Eyebrow>Segurança</Eyebrow>
-          <h2 className="font-display text-3xl font-bold leading-tight text-brand-deep sm:text-4xl">
-            Segurança não é detalhe. É parte do atendimento.
-          </h2>
-        </Reveal>
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {seguranca.map((s, i) => (
-            <Reveal key={s.title} delay={i * 70}>
-              <Card title={s.title} icon={s.icon}>
-                {s.text}
-              </Card>
-            </Reveal>
-          ))}
+        <div className="grid gap-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:gap-16">
+          <Reveal>
+            <Eyebrow>Confiança e segurança</Eyebrow>
+            <h2 className="font-display text-3xl font-bold leading-tight text-brand-deep sm:text-4xl">
+              Cuidado responsável em cada etapa da vacinação.
+            </h2>
+            <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">
+              Na Saúde Livre Curitiba, unimos boas práticas, estrutura preparada e atendimento
+              acolhedor para oferecer uma experiência segura e tranquila para toda a família.
+            </p>
+
+            <ul className="mt-9 grid grid-cols-2 gap-x-5 gap-y-7">
+              {pilaresConfianca.map((pilar) => (
+                <li key={pilar.label} className="flex flex-col items-start gap-3 sm:flex-row sm:items-center">
+                  <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-brand-deep text-brand-foreground shadow-soft">
+                    <pilar.icon className="h-6 w-6" aria-hidden="true" />
+                  </span>
+                  <span className="text-sm font-semibold leading-tight text-brand-deep">
+                    {pilar.label}
+                  </span>
+                </li>
+              ))}
+            </ul>
+
+            <p className="mt-8 border-l-2 border-mint pl-4 text-sm leading-relaxed text-muted-foreground">
+              A Anvisa é responsável pelo registro dos imunizantes. O licenciamento sanitário da
+              clínica é realizado pelo órgão de vigilância sanitária local.
+            </p>
+          </Reveal>
+
+          <Reveal delay={120}>
+            <div className="rounded-3xl bg-brand-deep p-4 shadow-lift sm:p-5">
+              <div className="space-y-3">
+                {seguranca.map((item) => (
+                  <div
+                    key={item.title}
+                    className="flex gap-4 rounded-2xl border border-brand-light/35 bg-brand-deep p-4 sm:items-center sm:p-5"
+                  >
+                    <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-mint text-brand-deep">
+                      <item.icon className="h-6 w-6" aria-hidden="true" />
+                    </span>
+                    <div>
+                      <h3 className="font-display text-base font-semibold text-brand-foreground sm:text-lg">
+                        {item.title}
+                      </h3>
+                      <p className="mt-1 text-sm leading-relaxed text-brand-mist/80">{item.text}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </Reveal>
         </div>
       </Section>
 
