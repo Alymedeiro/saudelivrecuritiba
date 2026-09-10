@@ -3,7 +3,6 @@ import {
   Baby,
   CalendarCheck,
   ClipboardList,
-  Clock,
   HeartHandshake,
   Instagram,
   MapPin,
@@ -740,7 +739,71 @@ function Index() {
         </div>
       </Section>
 
-      {/* 13. RODAPÉ */}
+      {/* 13. ÍCONES RÁPIDOS */}
+      <Section tone="soft">
+        <Reveal className="mx-auto max-w-3xl text-center">
+          <Eyebrow>Fale com a gente</Eyebrow>
+          <h2 className="font-display text-3xl font-bold leading-tight text-brand-deep sm:text-4xl">
+            Tudo o que você precisa em um só lugar.
+          </h2>
+          <p className="mt-5 text-base leading-relaxed text-muted-foreground">
+            Toque em um dos ícones abaixo para falar pelo WhatsApp, ver o endereço no mapa ou nos seguir no Instagram.
+          </p>
+        </Reveal>
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            {
+              icon: MessageCircle,
+              title: "WhatsApp",
+              text: clinic.whatsappDisplay,
+              href: whatsappLink(),
+              cta: "Enviar mensagem",
+            },
+            {
+              icon: MapPin,
+              title: "Endereço",
+              text: "Rua Emiliano Perneta, 860 - Centro",
+              href: clinic.maps,
+              cta: "Ver no mapa",
+            },
+            {
+              icon: CalendarCheck,
+              title: "Agendamento",
+              text: "Escolha o melhor horário para sua família.",
+              href: whatsappLink("Olá! Quero agendar um horário na Saúde Livre Curitiba."),
+              cta: "Agendar",
+            },
+            {
+              icon: Instagram,
+              title: "Instagram",
+              text: clinic.instagramHandle,
+              href: clinic.instagram,
+              cta: "Seguir",
+            },
+          ].map((item, i) => (
+            <Reveal key={item.title} delay={i * 80}>
+              <a
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex h-full flex-col items-center rounded-3xl border border-border bg-card p-6 text-center shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-brand/25 hover:shadow-lift"
+              >
+                <span className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-light/15 text-brand transition-colors group-hover:bg-brand group-hover:text-brand-foreground">
+                  <item.icon className="h-7 w-7" aria-hidden="true" />
+                </span>
+                <h3 className="font-display mt-5 text-lg font-semibold text-brand-deep">{item.title}</h3>
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">{item.text}</p>
+                <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-brand">
+                  {item.cta}
+                  <span aria-hidden="true" className="transition-transform group-hover:translate-x-0.5">→</span>
+                </span>
+              </a>
+            </Reveal>
+          ))}
+        </div>
+      </Section>
+
+      {/* 14. RODAPÉ */}
       <footer className="relative overflow-hidden bg-brand-deep px-5 py-16 text-brand-mist sm:px-8">
         <span aria-hidden="true" className="bg-dots absolute inset-0 opacity-[0.15]" />
         <span aria-hidden="true" className="blob -left-20 -top-16 h-72 w-72 bg-brand-light/25" />
