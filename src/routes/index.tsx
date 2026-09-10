@@ -767,9 +767,9 @@ function Index() {
               cta: "Ver no mapa",
             },
             {
-              icon: Clock,
-              title: "Horário",
-              text: clinic.hours,
+              icon: CalendarCheck,
+              title: "Agendamento",
+              text: "Escolha o melhor horário para sua família.",
               href: whatsappLink("Olá! Quero agendar um horário na Saúde Livre Curitiba."),
               cta: "Agendar",
             },
