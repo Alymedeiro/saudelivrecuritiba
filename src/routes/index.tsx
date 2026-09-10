@@ -19,7 +19,7 @@ import {
 } from "lucide-react";
 import heroImg from "@/assets/hero-familia.jpg";
 import idososImg from "@/assets/fases-idosos.jpg";
-import cuidadoPrimeirosMesesImg from "@/assets/cuidado-primeiros-meses.jpg";
+import bebeSaudeLivreAsset from "@/assets/bebe-saude-livre.png.asset.json";
 import mascotImg from "@/assets/mascote-saude-livre.png";
 import { clinic, whatsappLink } from "@/lib/clinic";
 import { Card, Eyebrow, Section, WhatsAppButton } from "@/components/landing/ui";
@@ -348,11 +348,11 @@ function Index() {
             />
             <div className="relative overflow-hidden rounded-[1.75rem] shadow-lift">
               <img
-                src={cuidadoPrimeirosMesesImg}
+                  src={bebeSaudeLivreAsset.url}
                 loading="lazy"
-                width={1200}
-                height={900}
-                alt="Profissional de saúde acolhendo um bebê em ambiente preparado para atendimento infantil"
+                  width={495}
+                  height={425}
+                  alt="Bebê sorrindo durante os primeiros meses de vida"
                 className="aspect-[4/3] w-full object-cover"
               />
               <span
