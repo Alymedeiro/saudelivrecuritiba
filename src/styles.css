@@ -228,6 +228,10 @@
     scroll-behavior: smooth;
   }
 
+  #lovablebadge{
+    display: none 1!important;
+  }
+
   ::selection {
     background-color: color-mix(in oklab, var(--brand-light) 30%, transparent);
   }
