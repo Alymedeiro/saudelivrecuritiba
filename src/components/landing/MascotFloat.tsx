@@ -11,7 +11,7 @@ export function MascotFloat() {
         className="group pointer-events-auto relative block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
         aria-label="Falar com a Saúde Livre pelo WhatsApp"
       >
-        <span className="glass-card absolute bottom-[78%] left-[72%] hidden w-max max-w-48 rounded-xl border border-border px-3 py-2 text-xs font-semibold text-brand-deep opacity-0 shadow-soft transition-all duration-300 group-hover:-translate-y-1 group-hover:opacity-100 group-focus-visible:opacity-100 sm:block">
+        <span className="absolute bottom-[78%] left-[72%] hidden w-max max-w-48 rounded-lg border border-border bg-background px-3 py-2 text-xs font-semibold text-brand-deep opacity-0 shadow-soft transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100 sm:block">
           Olá! Vamos cuidar da sua proteção?
         </span>
         <img
@@ -19,7 +19,7 @@ export function MascotFloat() {
           alt="Mascote canino da Saúde Livre vestido como super-herói"
           width={768}
           height={960}
-          className="animate-mascot-float h-auto w-24 drop-shadow-xl transition-transform duration-300 group-hover:scale-105 sm:w-32 lg:w-40"
+          className="h-auto w-20 drop-shadow-md transition-transform duration-200 group-hover:scale-[1.03] sm:w-24 lg:w-28"
         />
       </a>
     </aside>

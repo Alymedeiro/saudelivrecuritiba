@@ -20,16 +20,16 @@ export function SiteHeader() {
   }, []);
 
   return (
-    <div className="pointer-events-none fixed inset-x-0 top-0 z-40 px-3 pt-3 sm:px-5 sm:pt-4">
+    <div className="pointer-events-none fixed inset-x-0 top-0 z-40 border-b border-transparent px-3 pt-3 sm:px-5 sm:pt-4">
       <header
-        className={`pointer-events-auto mx-auto flex w-full max-w-6xl items-center justify-between gap-4 rounded-2xl border px-4 py-3 transition-all duration-300 sm:px-5 ${
+        className={`pointer-events-auto mx-auto flex w-full max-w-6xl items-center justify-between gap-4 rounded-xl border px-4 py-3 transition-all duration-200 sm:px-5 ${
           scrolled
-            ? "glass-card border-border shadow-soft"
+            ? "bg-background/95 border-border shadow-soft backdrop-blur-md"
             : "border-transparent bg-transparent"
         }`}
       >
         <a href="#topo" className="flex items-center gap-2.5">
-          <span className="bg-brand-gradient inline-flex h-9 w-9 items-center justify-center rounded-xl text-brand-foreground shadow-glow">
+          <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-brand text-brand-foreground">
             <ShieldCheck className="h-5 w-5" aria-hidden="true" />
           </span>
           <span className="font-display text-sm font-bold leading-tight text-brand-deep sm:text-base">
